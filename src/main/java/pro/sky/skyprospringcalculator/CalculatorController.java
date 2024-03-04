@@ -18,22 +18,22 @@ public class CalculatorController {
     }
 
     @GetMapping (path = "/calculator/plus")
-    public String sumNumbers(@RequestParam int nam1, @RequestParam int num2) {
+    public String sumNumbers(@RequestParam("num1") int nam1, @RequestParam("num2") int num2) {
         return String.valueOf(calculatorService.summa(nam1, num2));
     }
 
     @GetMapping (path = "/calculator/minus")
-    public String subtractionNumbers(@RequestParam int nam1, @RequestParam int num2) {
+    public String subtractionNumbers(@RequestParam("num1") int nam1, @RequestParam("num2") int num2) {
         return String.valueOf(calculatorService.subtraction(nam1, num2));
     }
 
     @GetMapping (path = "/calculator/multiply")
-    public String multiplicationNumbers(@RequestParam int nam1, @RequestParam int num2) {
+    public String multiplicationNumbers(@RequestParam("num1") int nam1, @RequestParam("num2") int num2) {
         return String.valueOf(calculatorService.multiplication(nam1, num2));
     }
 
     @GetMapping (path = "/calculator/divide")
-    public String divisionNumbers(@RequestParam int nam1, @RequestParam int num2) {
+    public String divisionNumbers(@RequestParam("num1") int nam1, @RequestParam("num2") int num2) {
         if (num2 == 0) {
             return "На ноль делить нельзя";
         }
